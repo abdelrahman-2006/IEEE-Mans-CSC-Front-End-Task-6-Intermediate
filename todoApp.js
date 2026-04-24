@@ -32,17 +32,15 @@ document.querySelector('form').addEventListener('submit', function(event) {
 function createTasks(tasksToRender) {
     const result = document.getElementById('result');
 
-    tasksToRender.forEach((taskName, index) => {
+    tasksToRender.forEach((taskName) => {
         const task = document.createElement('div');
         task.classList.add('task');
-        task.setAttribute('id', `task-${index}`);
         
         const taskText = document.createElement('span');
         taskText.textContent = taskName;
         
         const deleteTask = document.createElement('button');
         deleteTask.classList.add('delete');
-        deleteTask.setAttribute('id', `delete-${index}`);
         deleteTask.textContent = 'delete';
         
         deleteTask.addEventListener('click', () => {
